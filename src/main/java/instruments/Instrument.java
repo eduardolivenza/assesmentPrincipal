@@ -1,12 +1,13 @@
     package instruments;
 
 
-import instruments.modules.Commands.ICommand;
-import instruments.modules.IModule;
+    import instruments.modules.Commands.ICommand;
+    import instruments.modules.IModule;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+    import java.util.ArrayList;
+    import java.util.Collection;
+    import java.util.HashMap;
+    import java.util.List;
 
 public abstract class Instrument implements IInstrument{
 
@@ -35,4 +36,9 @@ public abstract class Instrument implements IInstrument{
         return this.commandsList.get(myCommand);
     };
 
+
+    @Override
+    public Collection<ICommand> getCommands() {
+        return commandsList.values();
+    }
 }

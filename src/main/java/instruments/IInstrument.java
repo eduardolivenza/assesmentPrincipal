@@ -3,6 +3,7 @@ package instruments;
 import instruments.modules.Commands.ICommand;
 import instruments.modules.IModule;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface IInstrument {
@@ -18,4 +19,6 @@ public interface IInstrument {
     List<IModule> getModules();
 
     ICommand getCommandByName(String myCommand);
+
+    Collection<ICommand> getCommands();
 }

@@ -1,3 +1,5 @@
+package app;
+
 import instruments.AnaliticInstrument;
 import instruments.InstrumentModuleManager;
 import instruments.modules.Commands.CommandA;
@@ -25,6 +27,7 @@ public class Main {
 
 
         manager.getInstrumentByName(instrumentName1).getCommandByName("MyCommand1").exeOperation();
+        manager.getInstrumentByName(instrumentName1).getCommandByName("MyCommand2").exeOperation();
     }
 
 }

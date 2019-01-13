@@ -5,6 +5,7 @@ import instruments.modules.IModule;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class AnaliticInstrument extends Instrument {
 
@@ -18,4 +19,6 @@ public class AnaliticInstrument extends Instrument {
     public String getInstrumentType() {
         return "Analitic";
     }
+
+
 }
