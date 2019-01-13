@@ -13,6 +13,6 @@ public class CommandB implements ICommand {
     @Override
     public void exeOperation() {
 
-        System.out.println(" Command B triggered. Blablaabahaa " + module.getName());
+        System.out.println(" Command B triggered. Can do some operations over module: " + module.getName());
     }
 }

@@ -14,6 +14,10 @@ public abstract class Instrument implements IInstrument{
     HashMap<String , ICommand> commandsList;
     String name;
 
+    public void addInstrumentModule (IModule m){
+        this.modules.add(m);
+    }
+
     public void addInstrumentCommand(String commandName, ICommand command){
         this.commandsList.put(commandName, command);
     }

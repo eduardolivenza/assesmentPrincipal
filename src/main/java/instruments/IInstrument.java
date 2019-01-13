@@ -9,6 +9,8 @@ public interface IInstrument {
 
     void addInstrumentCommand(String commandName, ICommand command);
 
+    void addInstrumentModule (IModule m);
+
     String getInstrumentName();
 
     String getInstrumentType();
