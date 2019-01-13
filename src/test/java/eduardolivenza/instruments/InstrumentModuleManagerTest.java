@@ -1,10 +1,8 @@
-package test.eduardolivenza.instruments;
+package eduardolivenza.instruments;
 
-import eduardolivenza.instruments.AnaliticInstrument;
 import eduardolivenza.instruments.Commands.CommandA;
 import eduardolivenza.instruments.Commands.CommandB;
 import eduardolivenza.instruments.Commands.ICommand;
-import eduardolivenza.instruments.InstrumentModuleManager;
 import eduardolivenza.instruments.modules.IModule;
 import eduardolivenza.instruments.modules.Module;
 import org.junit.Before;
@@ -24,9 +22,14 @@ public class InstrumentModuleManagerTest {
 
     @Mock
     private CommandA CommandA;
+    @Mock
+    private CommandB CommandB;
+    @Mock
+    private Module mockedModule;
 
     private final static String instrumentName1 = "Instrument 1";
-    private final static String instrumentName2 = "Instrument 2";
+    private final static String instrumentName2 = "PreAnalitic 2";
+    private final static String instrumentName3 = "PostAnalitic 3";
 
     @Before
     public void setUp() {
@@ -89,11 +92,41 @@ public class InstrumentModuleManagerTest {
     }
 
     @Test
-    public void addAnExecuteTwoCommandsOveraNewModuleOfAnInstrument() {
+    public void addAnExecuteTwoCommands() {
+        manager.addCommandToInstrument(instrumentName1, " P1", CommandB);
+        manager.addCommandToInstrument(instrumentName1, " P2", CommandB);
+
         for (ICommand m: manager.getInstrumentByName(instrumentName1).getCommands()){
             m.exeOperation();
-            verify(CommandA, times(1)).exeOperation();
         }
+        verify(CommandA, times(1)).exeOperation();
+        verify(CommandB, times(2)).exeOperation();
+    }
+
+    @Test
+    public void executeCommandOverAModule() {
+        manager.addModuleToInstrument(instrumentName1, mockedModule);
+        manager.addCommandToInstrument(instrumentName1, "ExeOverMockedModule", new CommandB(mockedModule) );
+        manager.getInstrumentByName(instrumentName1).getCommandByName("ExeOverMockedModule").exeOperation();
+        verify(mockedModule, times(1)).getName();
+    }
+
+    @Test
+    public void addOtherTypesOfInstrument() {
+
+        manager.addNewInstrument( new PreAnaliticInstrument(instrumentName2, new ArrayList<IModule>() ));
+        manager.addNewInstrument( new PostAnaliticInstrument(instrumentName3, new ArrayList<IModule>() ));
+
+        IModule m1 = new Module();
+        manager.addModuleToInstrument(instrumentName2, m1);
+        manager.addCommandToInstrument(instrumentName2, "CommandA", new CommandA(m1));
+
+        assertThat("Check modules I1", manager.getInstrumentByName(instrumentName1).getModules().size() ==1);
+        assertThat("Check modules I2", manager.getInstrumentByName(instrumentName2).getModules().size() ==1);
+        assertThat("Check modules I3", manager.getInstrumentByName(instrumentName3).getModules().size() ==0);
+
+        assertThat("Check commands number I2", manager.getInstrumentByName(instrumentName2).getCommands().size() ==1);
+        assertThat("Check commands number I3", manager.getInstrumentByName(instrumentName3).getCommands().size() ==0);
     }
 
 }

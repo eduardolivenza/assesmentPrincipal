@@ -12,6 +12,6 @@ public class CommandB implements ICommand {
 
     public void exeOperation() {
 
-        System.out.println(" Command B triggered. Can do some operations over module: " + module.getName());
+        System.out.println(" Command B triggered. Can do some operations over module: " + module.getName() );
     }
 }
