@@ -1,4 +1,4 @@
-package instruments.modules.Commands;
+package eduardolivenza.instruments.Commands;
 
 public interface ICommand {
 

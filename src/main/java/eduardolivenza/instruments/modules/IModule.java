@@ -1,4 +1,4 @@
-package instruments.modules;
+package eduardolivenza.instruments.modules;
 
 public interface IModule {
 

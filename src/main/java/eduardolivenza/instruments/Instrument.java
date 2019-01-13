@@ -1,8 +1,8 @@
-    package instruments;
+    package eduardolivenza.instruments;
 
 
-    import instruments.modules.Commands.ICommand;
-    import instruments.modules.IModule;
+    import eduardolivenza.instruments.Commands.ICommand;
+    import eduardolivenza.instruments.modules.IModule;
 
     import java.util.ArrayList;
     import java.util.Collection;
@@ -23,7 +23,6 @@ public abstract class Instrument implements IInstrument{
         this.commandsList.put(commandName, command);
     }
 
-    @Override
     public String getInstrumentName() {
         return name;
     }
@@ -36,8 +35,6 @@ public abstract class Instrument implements IInstrument{
         return this.commandsList.get(myCommand);
     };
 
-
-    @Override
     public Collection<ICommand> getCommands() {
         return commandsList.values();
     }

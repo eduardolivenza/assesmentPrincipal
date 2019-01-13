@@ -1,11 +1,11 @@
-package app;
+package eduardolivenza.app;
 
-import instruments.AnaliticInstrument;
-import instruments.InstrumentModuleManager;
-import instruments.modules.Commands.CommandA;
-import instruments.modules.Commands.CommandB;
-import instruments.modules.IModule;
-import instruments.modules.Module;
+import eduardolivenza.instruments.AnaliticInstrument;
+import eduardolivenza.instruments.InstrumentModuleManager;
+import eduardolivenza.instruments.Commands.CommandA;
+import eduardolivenza.instruments.Commands.CommandB;
+import eduardolivenza.instruments.modules.IModule;
+import eduardolivenza.instruments.modules.Module;
 
 import java.util.ArrayList;
 

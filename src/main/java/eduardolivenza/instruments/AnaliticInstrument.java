@@ -1,11 +1,10 @@
-package instruments;
+package eduardolivenza.instruments;
 
-import instruments.modules.Commands.ICommand;
-import instruments.modules.IModule;
+import eduardolivenza.instruments.Commands.ICommand;
+import eduardolivenza.instruments.modules.IModule;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class AnaliticInstrument extends Instrument {
 
@@ -15,7 +14,6 @@ public class AnaliticInstrument extends Instrument {
         this.commandsList = new HashMap<String , ICommand>();
     }
 
-    @Override
     public String getInstrumentType() {
         return "Analitic";
     }

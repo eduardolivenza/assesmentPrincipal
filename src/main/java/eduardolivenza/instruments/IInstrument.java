@@ -1,7 +1,7 @@
-package instruments;
+package eduardolivenza.instruments;
 
-import instruments.modules.Commands.ICommand;
-import instruments.modules.IModule;
+import eduardolivenza.instruments.Commands.ICommand;
+import eduardolivenza.instruments.modules.IModule;
 
 import java.util.Collection;
 import java.util.List;

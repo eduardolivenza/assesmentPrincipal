@@ -1,6 +1,6 @@
-package instruments.modules.Commands;
+package eduardolivenza.instruments.Commands;
 
-import instruments.modules.IModule;
+import eduardolivenza.instruments.modules.IModule;
 
 public class CommandA implements ICommand {
 
@@ -11,8 +11,7 @@ public class CommandA implements ICommand {
         this.module = module;
     }
 
-    @Override
     public void exeOperation() {
-        System.out.println(" Excuting command a over module " + module.getName());
+        System.out.println(" Executing command A over module " + module.getName());
     }
 }

@@ -1,6 +1,6 @@
-package instruments.modules.Commands;
+package eduardolivenza.instruments.Commands;
 
-import instruments.modules.IModule;
+import eduardolivenza.instruments.modules.IModule;
 
 public class CommandB implements ICommand {
 
@@ -10,7 +10,6 @@ public class CommandB implements ICommand {
         this.module = module;
     }
 
-    @Override
     public void exeOperation() {
 
         System.out.println(" Command B triggered. Can do some operations over module: " + module.getName());
