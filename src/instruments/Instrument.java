@@ -1,4 +1,4 @@
-package instruments;
+    package instruments;
 
 
 import instruments.modules.Commands.ICommand;
