@@ -16,10 +16,10 @@ public class InstrumentModuleManager {
         this.instruments.put(instrument.getInstrumentName(), instrument);
     }
 
-    public void addModuleToInstrument(String instrumentName, IModule module)
+    public void addModuleToInstrument(String instrumentName, IModule m)
     {
         IInstrument instrument = getInstrumentByName(instrumentName);
-        instrument.getModules().add(module);
+        instrument.getModules().add(m);
     }
 
     public IInstrument getInstrumentByName(String instrumentName){
