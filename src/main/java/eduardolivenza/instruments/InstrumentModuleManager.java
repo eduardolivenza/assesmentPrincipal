@@ -9,9 +9,19 @@ public class InstrumentModuleManager {
 
     HashMap<String, IInstrument> instruments;
 
-    public  InstrumentModuleManager(){
+    private static InstrumentModuleManager instance;
+
+    public static synchronized InstrumentModuleManager getInstance(){
+        if(instance == null){
+            instance = new InstrumentModuleManager();
+        }
+        return instance;
+    }
+
+    private InstrumentModuleManager(){
         this.instruments = new HashMap<String, IInstrument>();;
     }
+
     public void addNewInstrument(IInstrument instrument){
         this.instruments.put(instrument.getInstrumentName(), instrument);
     }

@@ -34,7 +34,7 @@ public class InstrumentModuleManagerTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.manager = new InstrumentModuleManager();
+        this.manager = InstrumentModuleManager.getInstance();
         IModule m = new Module();
         ArrayList<IModule> modules = new ArrayList<IModule>();
         modules.add(m);

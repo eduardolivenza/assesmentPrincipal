@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        InstrumentModuleManager manager = new InstrumentModuleManager();
+        InstrumentModuleManager manager = InstrumentModuleManager.getInstance();
         manager.addNewInstrument( new AnaliticInstrument(instrumentName1, new ArrayList<IModule>()));
         manager.addNewInstrument( new AnaliticInstrument(instrumentName2, new ArrayList<IModule>()));
 
